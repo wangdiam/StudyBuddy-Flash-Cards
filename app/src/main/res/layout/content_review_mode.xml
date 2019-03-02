@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:transitionName="hero"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.activities.ReviewModeActivity"
+    tools:showIn="@layout/activity_review_mode"
+    android:paddingHorizontal="8dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/you_have_no_cards"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:textAlignment="center"
+        android:id="@+id/no_subject_cards_tv"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutAnimation="@anim/layout_animation_from_bottom"
+        android:id="@+id/review_mode_rv"
+        tools:listitem="@layout/card_item">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

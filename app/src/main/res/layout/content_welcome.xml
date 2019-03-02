@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.activities.WelcomeActivity"
+    android:background="@color/colorPrimaryDark"
+    tools:showIn="@layout/activity_welcome">
+
+    <TextView
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is your Study Buddy"
+        android:id="@+id/welcome_tv"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="36dp"
+        />
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Already have an account"
+        android:id="@+id/already_have_account_btn"
+        android:layout_below="@id/welcome_tv"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Need a new account?"
+        android:id="@+id/need_new_account_btn"
+        android:background="@android:color/white"
+        android:layout_below="@id/already_have_account_btn"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

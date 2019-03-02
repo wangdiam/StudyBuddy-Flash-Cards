@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.activities.AllSubjectsActivity"
+    tools:showIn="@layout/activity_all_subjects"
+    android:paddingHorizontal="8dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/you_have_no_subject_decks_created_create_one_now"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:textAlignment="center"
+        android:id="@+id/no_subject_deck_tv"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/all_subjects_rv"
+        android:layoutAnimation="@anim/layout_animation_from_bottom"
+        tools:listitem="@layout/subject_item">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+</RelativeLayout>

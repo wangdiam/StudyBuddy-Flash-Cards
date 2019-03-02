@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_marginHorizontal="8dp"
+    android:id="@+id/all_cards_individual_cv"
+    android:elevation="2dp"
+    android:layout_marginBottom="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/question"
+            android:id="@+id/all_cards_question_tv"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:layout_alignParentStart="true"/>
+
+        <View
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/all_cards_question_tv"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/divider"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/answer"
+            android:id="@+id/all_cards_answer_tv"
+            android:textSize="20sp"
+            android:layout_below="@id/divider"
+            android:textColor="@android:color/black"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/all_cards_subject_tv"
+            android:textSize="12sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_below="@id/all_cards_answer_tv"
+            android:text="Subject"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

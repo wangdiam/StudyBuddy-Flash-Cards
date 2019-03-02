@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wangdiam.studybuddycapstoneproject">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".application.StudyBuddyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8718775070617099~3804253495"/>
+        <activity
+            android:name=".ui.activities.AllCardsActivity"
+            android:label="@string/title_activity_all_cards"
+            android:theme="@style/AppTheme.SlidrActivityTheme"></activity>
+        <activity
+            android:name=".ui.activities.SpecificReviewModeCardActivity"
+            android:label="@string/title_activity_specific_review_mode_card"
+            android:theme="@style/AppTheme.SlidrActivityTheme" />
+        <activity
+            android:name=".ui.activities.ResetPasswordActivity"
+            android:label="@string/title_activity_reset_password"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activities.TestModeActivity"
+            android:label="@string/title_activity_test_mode"
+            android:theme="@style/AppTheme.SlidrActivityTheme" />
+        <activity
+            android:name=".ui.activities.ReviewModeActivity"
+            android:label="@string/title_activity_review_mode"
+            android:theme="@style/AppTheme.SlidrActivityTheme" />
+        <activity
+            android:name=".ui.activities.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme.SlidrActivityTheme" />
+        <activity
+            android:name=".ui.activities.CreateEditCardActivity"
+            android:label="@string/title_activity_create_new_card"
+            android:theme="@style/AppTheme.SlidrActivityTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.activities.CreateSubjectActivity"
+            android:label="@string/title_activity_create_new_subject"
+            android:theme="@style/AppTheme.SlidrActivityTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.activities.ModeChooserActivity"
+            android:label="@string/title_activity_mode_chooser"
+            android:theme="@style/AppTheme.SlidrActivityTheme" />
+        <activity
+            android:name=".ui.activities.AllSubjectsActivity"
+            android:label="@string/title_activity_all_subjects"
+            android:theme="@style/AppTheme.SlidrActivityTheme" />
+        <activity
+            android:name=".ui.activities.LandingActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".ui.activities.WelcomeActivity"
+            android:label="@string/title_activity_welcome"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activities.RegisterActivity"
+            android:label="@string/title_activity_register" />
+    </application>
+
+</manifest>

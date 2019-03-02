@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.activities.LandingActivity"
+    tools:showIn="@layout/app_bar_landing"
+    android:paddingHorizontal="16dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_marginHorizontal="1dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_view"
+        android:elevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hello"
+                android:textSize="24sp"
+                android:textColor="#000000"
+                android:id="@+id/hello_user_tv"/>
+
+            <TextView
+                android:layout_below="@id/hello_user_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/cards_to_study_today"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:id="@+id/cards_to_study_tv"/>
+
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <RelativeLayout
+        android:layout_marginTop="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|start"
+        android:layout_below="@id/card_view"
+        android:id="@+id/relative_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/quick_access"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="16dp"
+            android:textStyle="italic" />
+
+        <Button
+            android:textSize="12sp"
+            android:padding="8dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/go_to_cards_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="16dp"
+            android:background="@android:color/transparent"
+            android:text="@string/begin_studying"
+            android:textColor="@color/showAnswer" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@id/relative_layout"
+        android:layout_width="match_parent"
+        android:id="@+id/second_relative_layout"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/you_have_no_subject_decks_created_create_one_now"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="16dp"
+            android:visibility="invisible"
+            android:textAlignment="center"
+            android:id="@+id/no_subject_deck_tv"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/landing_rv"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/subject_item">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-8718775070617099/4343487153">
+    </com.google.android.gms.ads.AdView>
+
+
+
+
+
+</RelativeLayout>

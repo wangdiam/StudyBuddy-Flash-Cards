@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">StudyBuddyCapstoneProject</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_password_reenter">Re-enter Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_register">Register</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_register">Register</string>
+    <string name="register">Register</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_with_google">Sign In With Google</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_home">Home</string>
+    <string name="title_decks">Decks</string>
+    <string name="title_cards">Cards</string>
+    <string name="title_activity_decks">DecksActivity</string>
+    <string name="title_activity_cards">CardsActivity</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="title_activity_create_deck">CreateDeckActivity</string>
+    <string name="title_activity_create_cards">CreateCardsActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_landing">LandingActivity</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello">Hello,</string>
+    <string name="cards_to_study_today">You have x cards to study today!</string>
+    <string name="go_to_subjects">Go to Subjects</string>
+    <string name="go_to_cards">Go to Cards</string>
+    <string name="begin_studying">Begin Studying</string>
+    <string name="title_activity_all_subjects">AllSubjectsActivity</string>
+    <string name="subject_name">Subject Name</string>
+    <string name="cards_left">Total cards</string>
+    <string name="title_activity_mode_chooser">ModeChooserActivity</string>
+    <string name="title_activity_create_new_subject">CreateNewSubjectActivity</string>
+    <string name="title_activity_create_new_card">CreateNewCardActivity</string>
+    <string name="add_a_subject">Add a subject deck:</string>
+    <string name="enter_subject_name_here">Enter subject name here</string>
+    <string name="select_a_subject_deck">Select a Subject Deck</string>
+    <string name="front">Front</string>
+    <string name="back">Back</string>
+    <string name="review_mode">Review Mode</string>
+    <string name="test_mode">Test Mode</string>
+    <string name="title_activity_review_mode">ReviewModeActivity</string>
+    <string name="title_activity_test_mode">TestModeActivity</string>
+    <string name="question">Question</string>
+    <string name="subject">Subject</string>
+    <string name="title_activity_reset_password">ResetPasswordActivity</string>
+    <string name="reset_your_password">Reset your password</string>
+    <string name="link_to_reset_password_string">A link to reset your password will be sent to your Email address entered below.</string>
+    <string name="enter_your_email_here">Enter your email here</string>
+    <string name="send_reset_email">Send Reset Email</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="title_activity_specific_review_mode_card">SpecificReviewModeCardActivity</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet facilisis neque, id euismod elit. Nunc sed erat sit amet purus luctus egestas. Donec elementum quam in lacinia condimentum. Nam congue arcu in luctus pharetra. Vivamus et lorem a diam euismod iaculis. Nullam nec vestibulum turpis, vitae tincidunt nisl. Donec mattis nibh quis laoreet sodales. Nulla et lectus at nisl tincidunt ullamcorper eget non orci. Aenean imperdiet rutrum pharetra. Phasellus urna ante, tristique vel sollicitudin ac, placerat a dolor. Sed feugiat a augue sed ultrices. Nunc dapibus accumsan ligula at blandit. Nam vel tristique augue. Maecenas nisl quam, dapibus in eleifend nec, tempor eu eros. Aliquam erat volutpat. In mollis eros ut dolor blandit sollicitudin. Donec iaculis felis nec lectus malesuada, eget tristique lacus viverra. Phasellus rutrum nibh et magna sagittis, non sollicitudin massa volutpat. Donec hendrerit eget orci id congue. Proin in pellentesque nibh.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_have_no_subject_decks_created_create_one_now">You have no subject decks created. Create one now!</string>
+    <string name="you_have_no_cards">You have no cards. Start creating one now!</string>
+    <string name="title_activity_all_cards">AllCardsActivity</string>
+    <string name="action_share">Share</string>
+    <string name="answer">Answer</string>
+    <string name="quick_access">Quick Access</string>
+
+</resources>
