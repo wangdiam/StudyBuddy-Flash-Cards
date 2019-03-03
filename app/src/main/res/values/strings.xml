@@ -80,5 +80,10 @@
     <string name="this_is_your_study_buddy">Welcome to your Study Buddy!</string>
     <string name="already_have_an_account">Already have an account</string>
     <string name="need_a_new_account">Need a new account?</string>
+    <string name="general">General</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="signs_you_out_of_your_account">Signs you out of your account</string>
+    <string name="other">Other</string>
+    <string name="title_activity_about_me">AboutMeActivity</string>
 
 </resources>

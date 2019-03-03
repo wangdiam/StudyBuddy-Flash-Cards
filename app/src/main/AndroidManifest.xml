@@ -14,6 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".ui.activities.AboutMeActivity"
+            android:label="@string/title_activity_about_me"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
         <receiver android:name=".ui.widgets.CreateCardAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="General"
+        android:text="@string/general"
         android:textColor="@color/colorAccent"
         android:id="@+id/general_tv"/>
 
@@ -28,7 +28,39 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign Out"
+            android:text="@string/sign_out"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/signs_you_out_of_your_account"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/other"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/about_tv"
+        android:layout_below="@id/general_ll"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center|left"
+        android:id="@+id/about_ll"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_below="@id/about_tv"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About App"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="16dp" />
 
@@ -36,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimaryDark"
-            android:text="Signs you out of your account"/>
+            android:text="Information of this app"/>
 
     </LinearLayout>
 

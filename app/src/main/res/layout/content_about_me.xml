@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.wangdiam.studybuddycapstoneproject.ui.activities.AboutMeActivity"
+    tools:showIn="@layout/activity_about_me">
+
+    <TextView
+        android:padding="32dp"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I am Wang Dian, a budding developer from Singapore. Thank you for installing StudyBuddy to make your studying easier!"/>
+
+</RelativeLayout>

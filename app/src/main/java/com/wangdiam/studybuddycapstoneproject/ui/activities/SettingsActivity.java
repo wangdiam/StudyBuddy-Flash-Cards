@@ -25,6 +25,7 @@ import butterknife.ButterKnife;
 public class SettingsActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     @BindView(R.id.general_ll) LinearLayout generalLl;
     @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.about_ll) LinearLayout aboutLl;
     GoogleApiClient googleApiClient;
     private FirebaseAuth mAuth;
 
@@ -38,6 +39,13 @@ public class SettingsActivity extends AppCompatActivity implements GoogleApiClie
         setTitle("Settings");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        aboutLl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingsActivity.this,AboutMeActivity.class);
+                startActivity(intent);
+            }
+        });
         generalLl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
