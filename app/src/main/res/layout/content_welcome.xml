@@ -9,21 +9,30 @@
     android:background="@color/colorPrimaryDark"
     tools:showIn="@layout/activity_welcome">
 
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/welcome_iv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:layout_above="@id/welcome_tv"
+        android:src="@drawable/logo"/>
+
     <TextView
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is your Study Buddy"
+        android:text="@string/this_is_your_study_buddy"
         android:id="@+id/welcome_tv"
         android:textColor="@android:color/white"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="80dp"
         />
 
 
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Already have an account"
+        android:text="@string/already_have_an_account"
         android:id="@+id/already_have_account_btn"
         android:layout_below="@id/welcome_tv"
         android:background="@android:color/holo_red_dark"
@@ -34,7 +43,7 @@
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Need a new account?"
+        android:text="@string/need_a_new_account"
         android:id="@+id/need_new_account_btn"
         android:background="@android:color/white"
         android:layout_below="@id/already_have_account_btn"

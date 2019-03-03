@@ -77,5 +77,8 @@
     <string name="appwidget_text">Add a Card</string>
     <string name="add_widget">Add widget</string>
     <string name="to_your_studybuddy">to your StudyBuddy</string>
+    <string name="this_is_your_study_buddy">Welcome to your Study Buddy!</string>
+    <string name="already_have_an_account">Already have an account</string>
+    <string name="need_a_new_account">Need a new account?</string>
 
 </resources>
