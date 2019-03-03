@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/nav_header_title"
+        android:textColor="#000000"
         android:id="@+id/header_user_name_tv"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -32,6 +33,7 @@
         android:id="@+id/header_user_email_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#000000"
         android:text="@string/nav_header_subtitle" />
 
 </LinearLayout>

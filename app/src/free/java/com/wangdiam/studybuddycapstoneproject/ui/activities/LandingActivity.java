@@ -170,7 +170,7 @@ public class LandingActivity extends AppCompatActivity
                 for (DataSnapshot subject:dataSnapshot.getChildren()) {
                     total += Integer.parseInt(subject.child("cardCount").getValue().toString());
                 }
-                if (total != 0) cardsToStudyTV.setText("You have " + total.toString() + " cards in total. Start studying now!");
+                if (total != 0) cardsToStudyTV.setText("You have " + total.toString() + " " +  ((total==1) ? "card" : "cards") + " in total. Start studying now!");
                 else cardsToStudyTV.setText("You have no cards. Create one now!");
             }
         });
