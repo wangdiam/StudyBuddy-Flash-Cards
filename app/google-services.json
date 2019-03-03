@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "406842972781-gklte4aql32f8p3eub98crpif141p5eq.apps.googleusercontent.com",
+              "client_id": "406842972781-1bb96uc3ce0h00sm4gb4qfqafs47narp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -84,7 +84,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "406842972781-gklte4aql32f8p3eub98crpif141p5eq.apps.googleusercontent.com",
+              "client_id": "406842972781-1bb96uc3ce0h00sm4gb4qfqafs47narp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -111,6 +111,14 @@
           }
         },
         {
+          "client_id": "406842972781-8ep5nhv74i2ibedh5qdiks1r12ngu6k0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wangdiam.studybuddycapstoneproject",
+            "certificate_hash": "1a85fa4cec7195a8f10bbce0463b6fedd72e7065"
+          }
+        },
+        {
           "client_id": "406842972781-gklte4aql32f8p3eub98crpif141p5eq.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -128,7 +136,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "406842972781-gklte4aql32f8p3eub98crpif141p5eq.apps.googleusercontent.com",
+              "client_id": "406842972781-1bb96uc3ce0h00sm4gb4qfqafs47narp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -173,7 +181,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "406842972781-gklte4aql32f8p3eub98crpif141p5eq.apps.googleusercontent.com",
+              "client_id": "406842972781-1bb96uc3ce0h00sm4gb4qfqafs47narp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -217,7 +225,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "406842972781-gklte4aql32f8p3eub98crpif141p5eq.apps.googleusercontent.com",
+              "client_id": "406842972781-1bb96uc3ce0h00sm4gb4qfqafs47narp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -261,7 +269,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "406842972781-gklte4aql32f8p3eub98crpif141p5eq.apps.googleusercontent.com",
+              "client_id": "406842972781-1bb96uc3ce0h00sm4gb4qfqafs47narp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
