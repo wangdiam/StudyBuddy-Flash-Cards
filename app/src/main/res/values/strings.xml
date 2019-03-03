@@ -74,5 +74,8 @@
     <string name="action_share">Share</string>
     <string name="answer">Answer</string>
     <string name="quick_access">Quick Access</string>
+    <string name="appwidget_text">Add a Card</string>
+    <string name="add_widget">Add widget</string>
+    <string name="to_your_studybuddy">to your StudyBuddy</string>
 
 </resources>

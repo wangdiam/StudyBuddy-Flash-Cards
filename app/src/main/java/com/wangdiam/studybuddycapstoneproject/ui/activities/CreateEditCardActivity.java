@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.wangdiam.studybuddycapstoneproject.R;
 import com.wangdiam.studybuddycapstoneproject.models.Card;
@@ -51,7 +52,11 @@ public class CreateEditCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_new_card);
         ButterKnife.bind(this);
-
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Toast.makeText(this, "Please Sign In", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
         setSupportActionBar(toolbar);
         if (getIntent().getLongExtra(CARD_ID,0) != 0) setTitle("Edit Card");
         else setTitle("Add New Card");

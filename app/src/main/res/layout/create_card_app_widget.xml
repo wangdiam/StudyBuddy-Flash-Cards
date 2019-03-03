@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEB3B"
+    android:id="@+id/widget_rl"
+    android:gravity="center"
+    android:padding="@dimen/widget_margin">
+
+
+        <TextView
+            android:id="@+id/widget_tv"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            android:background="#FFEB3B"
+            android:contentDescription="@string/appwidget_text"
+            android:text="@string/appwidget_text"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <TextView
+            android:gravity="center"
+            android:background="#FFEB3B"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/widget_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottom_text_tv"
+            android:text="@string/to_your_studybuddy"/>
+
+
+
+</RelativeLayout>

@@ -14,16 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <receiver android:name=".ui.widgets.CreateCardAppWidget">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/create_card_app_widget_info" />
-        </receiver>
-
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8718775070617099~3804253495"/>
         <activity
             android:name=".ui.activities.AllCardsActivity"
             android:label="@string/title_activity_all_cards"

@@ -12,8 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
+
 import com.google.firebase.database.DataSnapshot;
 import com.wangdiam.studybuddycapstoneproject.R;
 import com.wangdiam.studybuddycapstoneproject.models.Card;
@@ -29,7 +28,6 @@ public class SpecificReviewModeCardFragment extends Fragment {
     CardViewModel cardViewModel;
     Card card;
     int position;
-    private AdView adView;
     TextView reviewModeSideTV,reviewModeContentTV;
     private MutableLiveData<DataSnapshot> mutableLiveData;
 
@@ -56,12 +54,6 @@ public class SpecificReviewModeCardFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_review_mode,container,false);
         reviewModeSideTV = view.findViewById(R.id.review_mode_side_tv);
         reviewModeContentTV = view.findViewById(R.id.review_mode_content_tv);
-        adView = view.findViewById(R.id.adView);
-        AdRequest.Builder builder = new AdRequest.Builder();
-        builder.addTestDevice("20E801D52D2188AC3F4CD978C5CD8BCF");
-        AdRequest adRequest = builder.build();
-        adRequest.isTestDevice(getContext());
-        adView.loadAd(adRequest);
         mutableLiveData.observe(this, new Observer<DataSnapshot>() {
             @Override
             public void onChanged(@Nullable DataSnapshot dataSnapshot) {
@@ -69,11 +61,11 @@ public class SpecificReviewModeCardFragment extends Fragment {
                 switch (position){
                     case 0:
                         reviewModeContentTV.setText(card!=null?card.getFront():"");
-                        reviewModeSideTV.setText("Front");
+                        reviewModeSideTV.setText(getResources().getText(R.string.front));
                         break;
                     case 1:
                         reviewModeContentTV.setText(card!=null?card.getBack():"");
-                        reviewModeSideTV.setText("Back");
+                        reviewModeSideTV.setText(getResources().getText(R.string.back));
                         break;
                     default:
                         break;

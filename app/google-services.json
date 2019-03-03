@@ -185,6 +185,50 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:406842972781:android:5882c60a24b4dbae",
+        "android_client_info": {
+          "package_name": "com.wangdiam.studybuddycapstoneproject.paid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406842972781-61lmcmqdqt5tg3glnphughil9n7jomr8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wangdiam.studybuddycapstoneproject.paid",
+            "certificate_hash": "cc596553d4ead9bd072ec9c372618b0c5756521e"
+          }
+        },
+        {
+          "client_id": "406842972781-gklte4aql32f8p3eub98crpif141p5eq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs44icS4fse0cGatff9Ome1bq5Ft0XNdc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406842972781-gklte4aql32f8p3eub98crpif141p5eq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:406842972781:android:a5020f4cf92a77b0",
         "android_client_info": {
           "package_name": "wangdian.flutterstudybuddy"
