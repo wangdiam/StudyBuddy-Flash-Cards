@@ -35,7 +35,7 @@
         android:text="@string/already_have_an_account"
         android:id="@+id/already_have_account_btn"
         android:layout_below="@id/welcome_tv"
-        android:background="@android:color/holo_red_dark"
+        android:background="@drawable/sign_in_btn"
         android:textColor="@android:color/white"
         android:layout_marginBottom="16dp"
         android:layout_centerHorizontal="true"/>
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:text="@string/need_a_new_account"
         android:id="@+id/need_new_account_btn"
-        android:background="@android:color/white"
+        android:background="@drawable/new_account_btn"
         android:layout_below="@id/already_have_account_btn"
         android:layout_centerHorizontal="true"/>
 

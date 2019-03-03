@@ -138,6 +138,7 @@ public class CreateEditCardActivity extends AppCompatActivity {
                         Toast.makeText(CreateEditCardActivity.this, "Card has been added to the deck", Toast.LENGTH_SHORT).show();
                     }
                     currentSpinnerIndex = spinner.getSelectedItemPosition();
+                    cardFrontET.requestFocus();
                 } else {
                     Toast.makeText(CreateEditCardActivity.this, "Please input all fields", Toast.LENGTH_SHORT).show();
                 }
