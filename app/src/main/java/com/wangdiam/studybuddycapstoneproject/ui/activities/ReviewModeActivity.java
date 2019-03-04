@@ -35,6 +35,8 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rm.com.longpresspopup.LongPressPopup;
+import rm.com.longpresspopup.LongPressPopupBuilder;
 
 import static com.wangdiam.studybuddycapstoneproject.ui.activities.AllSubjectsActivity.ADAPTER_POSITION;
 import static com.wangdiam.studybuddycapstoneproject.ui.activities.AllSubjectsActivity.SUBJECT_ID;
@@ -73,6 +75,11 @@ public class ReviewModeActivity extends AppCompatActivity {
         Subject subject = new Subject(getIntent().getStringExtra(SUBJECT));
         subject.setId(getIntent().getLongExtra(SUBJECT_ID,0));
         subjectViewModel = ViewModelProviders.of(this).get(SubjectViewModel.class);
+
+
+
+
+
         MutableLiveData<DataSnapshot> mutableSubjectsLiveData = subjectViewModel.getUpdatedSubjectNameWithId(getIntent().getLongExtra(SUBJECT_ID,0));
         mutableSubjectsLiveData.observe(this, new Observer<DataSnapshot>() {
             @Override

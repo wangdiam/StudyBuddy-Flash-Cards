@@ -85,5 +85,6 @@
     <string name="signs_you_out_of_your_account">Signs you out of your account</string>
     <string name="other">Other</string>
     <string name="title_activity_about_me">AboutMeActivity</string>
+    <string name="see_full_answer">See full answer</string>
 
 </resources>
