@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.database.DataSnapshot;
+import com.wangdiam.studybuddycapstoneproject.BuildConfig;
 import com.wangdiam.studybuddycapstoneproject.R;
 import com.wangdiam.studybuddycapstoneproject.models.Card;
 import com.wangdiam.studybuddycapstoneproject.viewmodels.CardViewModel;
@@ -58,7 +59,7 @@ public class SpecificReviewModeCardFragment extends Fragment {
         reviewModeContentTV = view.findViewById(R.id.review_mode_content_tv);
         adView = view.findViewById(R.id.adView);
         AdRequest.Builder builder = new AdRequest.Builder();
-        builder.addTestDevice("20E801D52D2188AC3F4CD978C5CD8BCF");
+        if (BuildConfig.BUILD_TYPE.equals("debug")) builder.addTestDevice("20E801D52D2188AC3F4CD978C5CD8BCF");
         AdRequest adRequest = builder.build();
         adRequest.isTestDevice(getContext());
         adView.loadAd(adRequest);

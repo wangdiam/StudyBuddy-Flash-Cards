@@ -45,6 +45,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.wangdiam.studybuddycapstoneproject.BuildConfig;
 import com.wangdiam.studybuddycapstoneproject.R;
 import com.wangdiam.studybuddycapstoneproject.models.Subject;
 import com.wangdiam.studybuddycapstoneproject.services.ReminderJobService;
@@ -136,7 +137,7 @@ public class LandingActivity extends AppCompatActivity
 
 
         AdRequest.Builder builder = new AdRequest.Builder();
-        builder.addTestDevice("20E801D52D2188AC3F4CD978C5CD8BCF");
+        if (BuildConfig.BUILD_TYPE.equals("debug")) builder.addTestDevice("20E801D52D2188AC3F4CD978C5CD8BCF");
         AdRequest adRequest = builder.build();
         mAdView.loadAd(adRequest);
         cardViewModel = ViewModelProviders.of(this).get(CardViewModel.class);
