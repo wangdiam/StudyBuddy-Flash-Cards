@@ -71,6 +71,7 @@
         <Button
             android:textSize="12sp"
             android:padding="8dp"
+
             android:foreground="?android:attr/selectableItemBackground"
             android:id="@+id/go_to_cards_btn"
             android:layout_width="wrap_content"
