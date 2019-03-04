@@ -1,14 +1,21 @@
 package com.wangdiam.studybuddycapstoneproject.ui.activities;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,6 +34,12 @@ import android.view.animation.LayoutAnimationController;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.firebase.jobdispatcher.Constraint;
+import com.firebase.jobdispatcher.FirebaseJobDispatcher;
+import com.firebase.jobdispatcher.GooglePlayDriver;
+import com.firebase.jobdispatcher.Job;
+import com.firebase.jobdispatcher.Lifetime;
+import com.firebase.jobdispatcher.Trigger;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,16 +47,19 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.wangdiam.studybuddycapstoneproject.R;
 import com.wangdiam.studybuddycapstoneproject.models.Subject;
+import com.wangdiam.studybuddycapstoneproject.services.ReminderJobService;
 import com.wangdiam.studybuddycapstoneproject.ui.adapters.SubjectAdapter;
 import com.wangdiam.studybuddycapstoneproject.viewmodels.CardViewModel;
 import com.wangdiam.studybuddycapstoneproject.viewmodels.SubjectViewModel;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Optional;
 
+import static com.wangdiam.studybuddycapstoneproject.application.StudyBuddyApp.REMINDER_JOB_SERVICE;
 import static com.wangdiam.studybuddycapstoneproject.ui.activities.AllSubjectsActivity.ADAPTER_POSITION;
 import static com.wangdiam.studybuddycapstoneproject.ui.activities.AllSubjectsActivity.CARD_COUNT;
 import static com.wangdiam.studybuddycapstoneproject.ui.activities.AllSubjectsActivity.SUBJECT;
@@ -88,6 +104,37 @@ public class LandingActivity extends AppCompatActivity
             return;
         }
 
+        FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(new GooglePlayDriver(this));
+        Calendar now = Calendar.getInstance();
+        Calendar fivePMAfternoon = Calendar.getInstance();
+        fivePMAfternoon.set(Calendar.HOUR, 5);
+        fivePMAfternoon.set(Calendar.MINUTE, 0);
+        fivePMAfternoon.set(Calendar.SECOND, 0);
+        fivePMAfternoon.set(Calendar.MILLISECOND, 0);
+        fivePMAfternoon.set(Calendar.AM_PM, Calendar.PM);
+        long diff = fivePMAfternoon.getTimeInMillis() - now.getTimeInMillis();
+        System.out.println(diff);
+        if (diff < 0) {
+            fivePMAfternoon.add(Calendar.DAY_OF_MONTH,1);
+            diff = fivePMAfternoon.getTimeInMillis() - now.getTimeInMillis();
+        }
+        System.out.println(diff);
+        int startSeconds = (int) (diff/1000);
+        int endSeconds = startSeconds + 300;
+        Job reminderJob = dispatcher.newJobBuilder()
+                .setService(ReminderJobService.class)
+                .setLifetime(Lifetime.FOREVER)
+                .setTrigger(Trigger.executionWindow(startSeconds,endSeconds))
+                .setReplaceCurrent(true)
+                .setConstraints(Constraint.ON_ANY_NETWORK)
+                .setRecurring(true)
+                .setTag(REMINDER_JOB_SERVICE)
+                .build();
+
+        dispatcher.mustSchedule(reminderJob);
+
+
+
         AdRequest.Builder builder = new AdRequest.Builder();
         builder.addTestDevice("20E801D52D2188AC3F4CD978C5CD8BCF");
         AdRequest adRequest = builder.build();
@@ -100,6 +147,9 @@ public class LandingActivity extends AppCompatActivity
         recyclerView.setHasFixedSize(true);
         subjectViewModel = ViewModelProviders.of(this).get(SubjectViewModel.class);
         mutableSubjectsLiveData = subjectViewModel.getAllSubjectsLiveData();
+
+
+
 
         mutableSubjectsLiveData.observe(this, new Observer<DataSnapshot>() {
             @Override
