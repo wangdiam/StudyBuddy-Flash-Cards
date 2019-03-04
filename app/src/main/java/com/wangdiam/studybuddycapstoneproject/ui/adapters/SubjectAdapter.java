@@ -54,7 +54,7 @@ public class SubjectAdapter extends ListAdapter<Subject,SubjectAdapter.SubjectHo
     public void onBindViewHolder(@NonNull SubjectHolder subjectHolder, int i) {
         Subject subject = getItem(i);
         subjectHolder.subjectNameTV.setText(subject.getName());
-        subjectHolder.noOfCardsTV.setText(subject.getCardCount().toString());
+        subjectHolder.noOfCardsTV.setText(String.format("%s",subject.getCardCount()));
     }
 
 

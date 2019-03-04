@@ -59,7 +59,7 @@ public class SpecificReviewModeCardFragment extends Fragment {
         reviewModeContentTV = view.findViewById(R.id.review_mode_content_tv);
         adView = view.findViewById(R.id.adView);
         AdRequest.Builder builder = new AdRequest.Builder();
-        if (BuildConfig.BUILD_TYPE.equals("debug")) builder.addTestDevice("20E801D52D2188AC3F4CD978C5CD8BCF");
+        builder.addTestDevice("20E801D52D2188AC3F4CD978C5CD8BCF");
         AdRequest adRequest = builder.build();
         adRequest.isTestDevice(getContext());
         adView.loadAd(adRequest);
@@ -70,11 +70,11 @@ public class SpecificReviewModeCardFragment extends Fragment {
                 switch (position){
                     case 0:
                         reviewModeContentTV.setText(card!=null?card.getFront():"");
-                        reviewModeSideTV.setText("Front");
+                        reviewModeSideTV.setText(getString(R.string.front));
                         break;
                     case 1:
                         reviewModeContentTV.setText(card!=null?card.getBack():"");
-                        reviewModeSideTV.setText("Back");
+                        reviewModeSideTV.setText(getString(R.string.back));
                         break;
                     default:
                         break;

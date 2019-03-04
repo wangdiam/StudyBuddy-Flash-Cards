@@ -59,7 +59,7 @@
             android:layout_marginTop="16dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="Subject"
+            android:text="@string/subject"
             android:textSize="12sp" />
 
     </RelativeLayout>

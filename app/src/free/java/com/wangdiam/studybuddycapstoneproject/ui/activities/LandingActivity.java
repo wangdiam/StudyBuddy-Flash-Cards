@@ -241,8 +241,8 @@ public class LandingActivity extends AppCompatActivity
                 for (DataSnapshot subject:dataSnapshot.getChildren()) {
                     total += Integer.parseInt(subject.child("cardCount").getValue().toString());
                 }
-                if (total != 0) cardsToStudyTV.setText("You have " + total.toString() + " " +  ((total==1) ? "card" : "cards") + " in total. Start studying now!");
-                else cardsToStudyTV.setText("You have no cards. Create one now!");
+                if (total != 0) cardsToStudyTV.setText(String.format("You have %s %s in total. Start studying now!", total.toString(), (total == 1) ? "card" : "cards"));
+                else cardsToStudyTV.setText(getString(R.string.no_cards_message));
             }
         });
         fab.setOnClickListener(new View.OnClickListener() {
@@ -292,11 +292,11 @@ public class LandingActivity extends AppCompatActivity
                 @Override
                 public void onChanged(@Nullable DataSnapshot dataSnapshot) {
                     try {
-                        mHelloUserTV.setText("Hello, " + dataSnapshot.getValue());
+                        mHelloUserTV.setText(String.format("Hello, %s", dataSnapshot.getValue()));
                         mHeaderViewHolder.mHeaderUserNameTV.setText(dataSnapshot.getValue().toString());
                         mHeaderViewHolder.mHeaderUserEmailTV.setText(mAuth.getCurrentUser().getEmail());
                     } catch (Exception e) {
-                        mHelloUserTV.setText("Hello, " + mAuth.getCurrentUser().getDisplayName());
+                        mHelloUserTV.setText(String.format("Hello, %s", mAuth.getCurrentUser().getDisplayName()));
                         mHeaderViewHolder.mHeaderUserEmailTV.setText(mAuth.getCurrentUser().getEmail());
                         mHeaderViewHolder.mHeaderUserNameTV.setText(mAuth.getCurrentUser().getDisplayName());
                     }

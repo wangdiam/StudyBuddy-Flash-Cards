@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".SettingsActivity"
+    tools:context=".ui.activities.SettingsActivity"
     tools:showIn="@layout/activity_settings"
     android:layout_margin="16dp">
 
@@ -19,7 +19,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:gravity="center|left"
+        android:gravity="center|start"
         android:id="@+id/general_ll"
         android:background="?android:attr/selectableItemBackground"
         android:layout_below="@id/general_tv"
@@ -51,7 +51,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:gravity="center|left"
+        android:gravity="center|start"
         android:id="@+id/about_ll"
         android:background="?android:attr/selectableItemBackground"
         android:layout_below="@id/about_tv"
@@ -60,15 +60,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="About App"
+            android:text="@string/about_app"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimaryDark"
-            android:text="Information of this app"/>
+            android:text="@string/information_of_this_app"/>
 
     </LinearLayout>
 

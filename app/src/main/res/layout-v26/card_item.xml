@@ -7,6 +7,7 @@
     android:layout_marginTop="16dp"
     android:padding="8dp"
     android:clickable="true"
+    android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
     android:layout_marginHorizontal="8dp"
     android:id="@+id/review_mode_individual_cv"
@@ -37,7 +38,7 @@
             android:maxLines="1"
             android:ellipsize="end"
             android:layout_below="@id/review_mode_question_tv"
-            android:text="Subject"
+            android:text="@string/subject"
             android:layout_alignParentEnd="true"/>
 
     </RelativeLayout>

@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import com.firebase.jobdispatcher.JobParameters;
 import com.firebase.jobdispatcher.JobService;
@@ -20,7 +19,6 @@ public class ReminderJobService extends JobService {
     @Override
     public boolean onStartJob(@NonNull JobParameters job) {
         sendNotification();
-        Log.d("Notified", "ok");
         return false;
     }
 
@@ -39,7 +37,7 @@ public class ReminderJobService extends JobService {
                 .setContentTitle("Reminder")
                 .setAutoCancel(true)
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("Remember to review your cards regularly! Click here to start studying."))
+                        .bigText(getString(R.string.notif_string)))
                 .setSound(defaultSoundUri)
                 .setContentIntent(pendingIntent);
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);

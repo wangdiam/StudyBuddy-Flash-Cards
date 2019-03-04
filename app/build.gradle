@@ -5,9 +5,9 @@ android {
     signingConfigs {
         config {
             keyAlias 'wangdiam'
-            keyPassword '12345678'
-            storeFile file('/home/wangdiam/StudyBuddyCapstoneProject/keystore.jks')
-            storePassword '12345678'
+            keyPassword 'Iamcow123'
+            storeFile file('keystore.jks')
+            storePassword 'Iamcow123'
         }
     }
     compileSdkVersion 28

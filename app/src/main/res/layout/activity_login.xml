@@ -38,7 +38,7 @@
                 android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="to your Study Buddy!"/>
+                android:text="@string/to_your_study_buddy"/>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_marginTop="48sp"
@@ -91,19 +91,20 @@
 
 
                 <Button
-                android:elevation="4dp"
-                android:id="@+id/sign_in_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="250dp"
-                android:paddingHorizontal="16dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:textColor="@android:color/white"
-                android:text="@string/action_sign_in_short"
-                android:background="@drawable/sign_in_btn"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_weight="1"
+                    android:elevation="4dp"
+                    android:id="@+id/sign_in_button"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="250dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/action_sign_in_short"
+                    android:background="@drawable/sign_in_btn"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
                 />
             <com.shobhitpuri.custombuttons.GoogleSignInButton
                 android:id="@+id/sign_in_google_button"

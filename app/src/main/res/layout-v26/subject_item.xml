@@ -23,7 +23,6 @@
             android:id="@+id/cards_left_tv"
             android:layout_alignParentEnd="true"
             android:layout_below="@id/subject_name_tv"
-            android:text="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <TextView

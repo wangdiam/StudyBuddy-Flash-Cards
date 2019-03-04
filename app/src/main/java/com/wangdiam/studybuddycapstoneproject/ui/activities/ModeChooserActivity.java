@@ -75,7 +75,7 @@ public class ModeChooserActivity extends AppCompatActivity {
             editor.commit();
         }
         slidrInterface = Slidr.attach(this);
-        subjectChosenTV.setText("Current Subject: " + getIntent().getStringExtra(SUBJECT));
+        subjectChosenTV.setText(String.format("Current Subject: %s", getIntent().getStringExtra(SUBJECT)));
         reviewModeCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

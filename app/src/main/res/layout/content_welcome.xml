@@ -12,6 +12,7 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:contentDescription="@string/title_activity_welcome"
         android:id="@+id/welcome_iv"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="36dp"

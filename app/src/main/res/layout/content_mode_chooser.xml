@@ -49,6 +49,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
+                        android:contentDescription="@string/review_mode"
                         android:src="@drawable/ic_toys_black_24dp"/>
                     <TextView
                         android:textColor="@android:color/black"
@@ -79,6 +80,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
+                        android:contentDescription="@string/test_mode"
                         android:src="@drawable/ic_sentiment_very_dissatisfied_black_24dp"/>
                     <TextView
                         android:textColor="@android:color/black"

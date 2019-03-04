@@ -7,7 +7,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ui.activities.AllCardsActivity"
     tools:showIn="@layout/activity_all_cards"
-    android:paddingHorizontal="8dp">
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp">
 
     <TextView
         android:layout_width="wrap_content"
