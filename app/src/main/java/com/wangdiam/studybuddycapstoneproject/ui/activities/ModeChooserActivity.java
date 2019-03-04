@@ -2,7 +2,9 @@ package com.wangdiam.studybuddycapstoneproject.ui.activities;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,9 @@ import com.wangdiam.studybuddycapstoneproject.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
+import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener;
 
 import static com.wangdiam.studybuddycapstoneproject.ui.activities.AllSubjectsActivity.SUBJECT_ID;
 import static com.wangdiam.studybuddycapstoneproject.ui.activities.AllSubjectsActivity.SUBJECT;
@@ -39,6 +44,36 @@ public class ModeChooserActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         setTitle("Choose A Mode");
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        if (!prefs.getBoolean("firstTimeModeChooser", false)) {
+            new GuideView.Builder(this)
+                    .setTitle("Review Mode")
+                    .setContentText("Review cards in chronological order with access to answers")
+                    .setTargetView(reviewModeCV)
+                    .setDismissType(DismissType.anywhere)
+                    .setGuideListener(new GuideListener() {
+                        @Override
+                        public void onDismiss(View view) {
+                            new GuideView.Builder(view.getContext())
+                                    .setTitle("Test Mode")
+                                    .setContentText("Quiz yourself in this mode by answering your questions in random order")
+                                    .setTargetView(testModeCV)
+                                    .setDismissType(DismissType.anywhere)
+                                    .build()
+                                    .show();
+                        }
+                    })
+                    .build()
+                    .show();
+
+
+
+
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("firstTimeModeChooser", true);
+            editor.commit();
+        }
         slidrInterface = Slidr.attach(this);
         subjectChosenTV.setText("Current Subject: " + getIntent().getStringExtra(SUBJECT));
         reviewModeCV.setOnClickListener(new View.OnClickListener() {

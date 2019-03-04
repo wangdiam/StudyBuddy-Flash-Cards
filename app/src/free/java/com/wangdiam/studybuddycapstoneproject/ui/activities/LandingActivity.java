@@ -9,10 +9,12 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.NotificationCompat;
@@ -59,6 +61,8 @@ import java.util.Calendar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Optional;
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
 
 import static com.wangdiam.studybuddycapstoneproject.application.StudyBuddyApp.REMINDER_JOB_SERVICE;
 import static com.wangdiam.studybuddycapstoneproject.ui.activities.AllSubjectsActivity.ADAPTER_POSITION;
@@ -103,6 +107,22 @@ public class LandingActivity extends AppCompatActivity
         if (currentUser == null) {
             sendToStart();
             return;
+        }
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        if (!prefs.getBoolean("firstTime", false)) {
+            new GuideView.Builder(this)
+                    .setTitle("Add card/subject button")
+                    .setContentText("Adds a card or subject deck")
+                    .setTargetView(fab)
+                    .setDismissType(DismissType.anywhere)
+                    .build()
+                    .show();
+
+
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("firstTime", true);
+            editor.commit();
         }
 
         FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(new GooglePlayDriver(this));

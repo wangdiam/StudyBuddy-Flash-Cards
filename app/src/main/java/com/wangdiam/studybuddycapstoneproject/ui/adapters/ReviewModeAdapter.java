@@ -1,8 +1,10 @@
 package com.wangdiam.studybuddycapstoneproject.ui.adapters;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Vibrator;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.recyclerview.extensions.ListAdapter;
@@ -26,6 +28,9 @@ import rm.com.longpresspopup.LongPressPopupBuilder;
 import rm.com.longpresspopup.PopupInflaterListener;
 import rm.com.longpresspopup.PopupOnHoverListener;
 import rm.com.longpresspopup.PopupStateListener;
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
+import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener;
 
 
 public class ReviewModeAdapter extends ListAdapter<Card, ReviewModeAdapter.CardHolder>{
@@ -85,6 +90,22 @@ public class ReviewModeAdapter extends ListAdapter<Card, ReviewModeAdapter.CardH
             mReviewModeCV = itemView.findViewById(R.id.review_mode_individual_cv);
             mReviewModeQuestionTV = itemView.findViewById(R.id.review_mode_question_tv);
             mReviewModeSubjectTV = itemView.findViewById(R.id.review_mode_subject_tv);
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(itemView.getContext());
+            if (!prefs.getBoolean("firstTimeReviewMode", false)) {
+                new GuideView.Builder(itemView.getContext())
+                        .setTitle("Content card")
+                        .setContentText("Click on the card to see detailed answers\n\nLong press the card to peek at the answer\n\nSwipe the card to delete it")
+                        .setTargetView(mReviewModeCV)
+                        .setDismissType(DismissType.anywhere)
+                        .build()
+                        .show();
+
+
+
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean("firstTimeReviewMode", true);
+                editor.commit();
+            }
             mReviewModeCV.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

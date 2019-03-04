@@ -1,5 +1,7 @@
 package com.wangdiam.studybuddycapstoneproject.ui.adapters;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.recyclerview.extensions.ListAdapter;
 import android.support.v7.util.DiffUtil;
@@ -17,6 +19,9 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.wangdiam.studybuddycapstoneproject.R;
 import com.wangdiam.studybuddycapstoneproject.models.Subject;
+
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
 
 public class SubjectAdapter extends ListAdapter<Subject,SubjectAdapter.SubjectHolder> {
     private OnItemClickListener listener;
@@ -70,6 +75,24 @@ public class SubjectAdapter extends ListAdapter<Subject,SubjectAdapter.SubjectHo
             subjectNameTV = itemView.findViewById(R.id.subject_name_tv);
             noOfCardsTV = itemView.findViewById(R.id.cards_left_tv);
             subjectCV = itemView.findViewById(R.id.subject_cv);
+
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(itemView.getContext());
+            if (!prefs.getBoolean("firstTimeSubjects", false)) {
+                new GuideView.Builder(itemView.getContext())
+                        .setTitle("Subject deck")
+                        .setContentText("Click on the deck to choose a study mode\n\nLong press the card for more options")
+                        .setTargetView(subjectCV)
+                        .setDismissType(DismissType.anywhere)
+                        .build()
+                        .show();
+
+
+
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean("firstTimeSubjects", true);
+                editor.commit();
+            }
+
             itemView.setOnCreateContextMenuListener(this);
             subjectCV.setOnClickListener(new View.OnClickListener() {
                 @Override
