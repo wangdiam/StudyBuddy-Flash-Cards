@@ -59,7 +59,6 @@ public class SpecificReviewModeCardFragment extends Fragment {
         reviewModeContentTV = view.findViewById(R.id.review_mode_content_tv);
         adView = view.findViewById(R.id.adView);
         AdRequest.Builder builder = new AdRequest.Builder();
-        builder.addTestDevice("20E801D52D2188AC3F4CD978C5CD8BCF");
         AdRequest adRequest = builder.build();
         adRequest.isTestDevice(getContext());
         adView.loadAd(adRequest);
