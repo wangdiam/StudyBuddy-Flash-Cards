@@ -1,13 +1,16 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
+def keystorePropertiesFile = rootProject.file("app/keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 android {
     signingConfigs {
         config {
-            keyAlias 'wangdiam'
-            keyPassword 'Iamcow123'
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
             storeFile file('keystore.jks')
-            storePassword 'Iamcow123'
+            storePassword keystoreProperties['storePassword']
         }
     }
     compileSdkVersion 28
