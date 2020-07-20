@@ -1,6 +1,6 @@
-# StudyBuddyCapstoneProject
+# StudyBuddy
 
-A flash card application built in Android with a Firebase back end that helps students better organize their study materials for easier memorisation on the go. This app is built with the MVVM architecture.
+A flash card application built with Android and Firebase that helps students better organize their study materials for easier memorisation on the go. This app is built with the MVVM architecture.
 
 ## Built With
 
